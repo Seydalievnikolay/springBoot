@@ -1,27 +1,17 @@
 package ru.skypro.lessons.springboot.EmployeeApplication.model;
 
+import lombok.*;
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Employee {
+    @EqualsAndHashCode.Include
+    private int id;
+
     private String name;
+
     private double salary;
-
-    public Employee(String name, double salary) {
-        this.name = name;
-        this.salary = salary;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getSalary() {
-        return salary;
-    }
-
-    public void setSalary(double salary) {
-        this.salary = salary;
-    }
 }
