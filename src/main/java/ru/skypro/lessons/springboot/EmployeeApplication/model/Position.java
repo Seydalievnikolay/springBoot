@@ -2,23 +2,21 @@ package ru.skypro.lessons.springboot.EmployeeApplication.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
+
 @Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Employee {
-    @EqualsAndHashCode.Include
+@EqualsAndHashCode
+public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String name;
-
-    private double salary;
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "position_id")
-    private Position position;
+    @OneToMany(mappedBy = "position")
+    private List<Employee> employee;
 }

@@ -10,10 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.skypro.lessons.springboot.EmployeeApplication.exception.BadRequestException;
+import ru.skypro.lessons.springboot.EmployeeApplication.exception.EmployeeNotFoundException;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -24,14 +23,14 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
     private final ObjectMapper objectMapper;
 
-    @ExceptionHandler(value = BadRequestException.class)
+    @ExceptionHandler(value = EmployeeNotFoundException.class)
     public void handleException(Exception exception, HttpServletRequest httpServletRequest,
                                 HttpServletResponse httpServletResponse) throws IOException {
         httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());
         httpServletResponse.setContentType("application/json");
         httpServletResponse.getWriter().write(objectMapper.writeValueAsString(new HashMap<>() {
             {
-                put("massage", exception.getMessage());
+                put("message", exception.getMessage());
                 put("type", exception.getClass());
             }
         }));
