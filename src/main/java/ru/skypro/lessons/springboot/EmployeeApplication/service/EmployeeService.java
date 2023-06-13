@@ -20,38 +20,31 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class EmployeeService {
     private final EmployeeRepository employeeRepository;
-
+    private final EmployeeMapper employeeMapper;
     public EmployeeDTO createEmployee(Employee employee) {
-        EmployeeDTO employeeDTO = EmployeeDTO.builder()
-                .name(employee.getName())
-                .salary(employee.getSalary())
-                .position(employee.getPosition().getName())
-                .build();
-        employeeRepository.save(employee);
-        return employeeDTO;
+        Employee saveEmployee = employeeRepository.save(employee);
+        return employeeMapper.toEmployeeDto(saveEmployee);
     }
 
     public EmployeeDTO getInformationForEmployee(int id) {
         return employeeRepository.findById(id)
-                .map(employee -> EmployeeDTO.builder()
-                        .name(employee.getName())
-                        .salary(employee.getSalary())
-                        .position(employee.getPosition().getName())
-                        .build())
+                .map(employee -> employeeMapper.toEmployeeDto(employee))
                 .orElseThrow(() -> new EmployeeNotFoundException("Not found ID"));
     }
 
     public EmployeeDTO updateEmployeeById(int id, Employee employee) {
         EmployeeDTO findEmployee = getInformationForEmployee(id);
-        findEmployee.setName(employee.getName());
-        findEmployee.setSalary(employee.getSalary());
-        findEmployee.setPosition(employee.getPosition().getName());
-        employeeRepository.save(employee);
-        return findEmployee;
+        Employee employeeEntity = employeeMapper.toEmployee(findEmployee);
+        employeeEntity.setName(employee.getName());
+        employeeEntity.setSalary(employee.getSalary());
+        employeeEntity.setPosition(employee.getPosition());
+        Employee employeeSave = employeeRepository.save(employee);
+        return employeeMapper.toEmployeeDto(employeeSave);
     }
 
     public List<EmployeeDTO> getAllEmployee() {
-        return employeeRepository.getAllEmployee();
+        List<Employee> employees = employeeRepository.getAllEmployee();
+        return employeeMapper.toEmployeeDto(employees);
     }
 
     public void deleteById(int id) {
@@ -62,6 +55,7 @@ public class EmployeeService {
 
     public Collection<EmployeeDTO> getEmployeesBySalaryGreaterThan(double salary) {
         return employeeRepository.getAllEmployee().stream()
+                .map(employee -> employeeMapper.toEmployeeDto(employee))
                 .filter(employee -> employee.getSalary() >= salary)
                 .collect(Collectors.toList());
 
@@ -69,6 +63,7 @@ public class EmployeeService {
 
     public List<EmployeeDTO> getEmployeeByPosition(Position position) {
         return employeeRepository.getAllEmployee().stream()
+                .map(employee -> employeeMapper.toEmployeeDto(employee))
                 .filter(employeeDTO -> employeeDTO.getPosition().equals(employeeDTO.getName()))
                 .collect(Collectors.toList());
     }

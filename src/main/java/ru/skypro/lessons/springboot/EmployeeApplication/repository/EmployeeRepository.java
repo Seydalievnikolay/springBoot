@@ -17,7 +17,7 @@ public interface EmployeeRepository extends CrudRepository<Employee, Integer>,
     Collection<EmployeeDTO> getEmployeesBySalaryGreaterThan(@Param("salary") double salary);
 
     public void deleteById(int id);
-    List<EmployeeDTO> getAllEmployee();
+    List<Employee> getAllEmployee();
     EmployeeDTO getInformationForEmployee(int id);
 
 

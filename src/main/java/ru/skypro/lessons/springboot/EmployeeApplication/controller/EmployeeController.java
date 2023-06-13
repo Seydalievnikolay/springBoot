@@ -12,9 +12,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
-@RequiredArgsConstructor
+
 public class EmployeeController {
     private final EmployeeService employeeService;
+
+    public EmployeeController(EmployeeService employeeService) {
+        this.employeeService = employeeService;
+    }
 
     @PostMapping
     public EmployeeDTO createEmployee(@RequestBody Employee employee) {

@@ -2,12 +2,13 @@ package ru.skypro.lessons.springboot.EmployeeApplication.model;
 
 import jakarta.persistence.*;
 import lombok.*;
-@Entity
+
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@Entity
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Employee {
     @EqualsAndHashCode.Include
@@ -22,3 +23,5 @@ public class Employee {
     @JoinColumn(name = "position_id")
     private Position position;
 }
+
+
