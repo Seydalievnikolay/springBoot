@@ -1,14 +1,14 @@
 package ru.skypro.lessons.springboot.EmployeeApplication.controller;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.server.ResponseStatusException;
-import ru.skypro.lessons.springboot.EmployeeApplication.handler.GlobalExceptionHandler;
+import ru.skypro.lessons.springboot.EmployeeApplication.dto.EmployeeDTO;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.Employee;
+import ru.skypro.lessons.springboot.EmployeeApplication.model.Position;
 import ru.skypro.lessons.springboot.EmployeeApplication.service.EmployeeService;
 
 import java.util.Collection;
+import java.util.List;
 
 @RestController
 @RequestMapping("/employee")
@@ -16,51 +16,39 @@ import java.util.Collection;
 public class EmployeeController {
     private final EmployeeService employeeService;
 
-
-    @GetMapping("/salary/sum")
-    public double getSalary() {
-        return employeeService.getSumSalary();
-    }
-
-    @GetMapping("/salary/min")
-    public Employee getMinSalary() {
-        return employeeService.getMinimumSalaryEmployee();
-    }
-
-    @GetMapping("/salary/max")
-    public Employee getMaxSalary() {
-        return employeeService.getMaximumSalaryEmployee();
-    }
-
-    @GetMapping("/salary")
-    public Collection<Employee> getEmployeeAverageSalary() {
-        return employeeService.getEmployeesSalaryAboveAverage();
-    }
     @PostMapping
-    public Employee createEmployee(@RequestBody Employee employee) {
+    public EmployeeDTO createEmployee(@RequestBody Employee employee) {
             return employeeService.createEmployee(employee);
     }
     @PutMapping("/{id}")
-    public Employee updateEmployeeById(@PathVariable int id,
+    public EmployeeDTO updateEmployeeById(@PathVariable int id,
                                        @RequestBody Employee employee) {
             return employeeService.updateEmployeeById(id, employee);
     }
 
-    @GetMapping("/{id}")
-    public Employee getInformationForEmployee(@PathVariable int id) {
+    @GetMapping("/{id}/fullInfo")
+    public EmployeeDTO getInformationForEmployee(@PathVariable int id) {
         return employeeService.getInformationForEmployee(id);
     }
     @DeleteMapping("/{id}")
-    public Employee deleteEmployee(@PathVariable int id) {
-        return employeeService.deleteEmployee(id);
+    public void deleteById(@PathVariable int id) {
+        employeeService.deleteById(id);
     }
 
     @GetMapping("/salaryHigherThan")
-    public Collection<Employee> getEmployeesBySalaryHigher(@RequestParam double salary)  {
-        return employeeService.getEmployeesBySalaryHigher(salary);
+    public Collection<EmployeeDTO> getEmployeesBySalaryGreaterThan(@RequestParam double salary)  {
+        return employeeService.getEmployeesBySalaryGreaterThan(salary);
     }
     @GetMapping
-    public Collection<Employee> getAllEmployees() {
-        return employeeService.getAllEmployees();
+    public Collection<EmployeeDTO> getAllEmployees() {
+        return employeeService.getAllEmployee();
+    }
+    @GetMapping("/position")
+    public List<EmployeeDTO> getEmployeeByPosition(Position position) {
+        return employeeService.getEmployeeByPosition(position);
+    }
+    @GetMapping("/page")
+    public List<Employee> getEmployeesByPage(int number) {
+        return employeeService.getEmployeesByPage(number);
     }
 }

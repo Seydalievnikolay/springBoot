@@ -1,26 +1,24 @@
 package ru.skypro.lessons.springboot.EmployeeApplication.repository;
 
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+import ru.skypro.lessons.springboot.EmployeeApplication.dto.EmployeeDTO;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.Employee;
 
 import java.util.Collection;
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
-public interface EmployeeRepository {
-    double getSumSalary();
-    Employee getMinimumSalaryEmployee();
+@Repository
+public interface EmployeeRepository extends CrudRepository<Employee, Integer>,
+        PagingAndSortingRepository<Employee, Integer> {
 
-    Employee getMaximumSalaryEmployee();
+    Collection<EmployeeDTO> getEmployeesBySalaryGreaterThan(@Param("salary") double salary);
 
-    Collection<Employee> getEmployeesSalaryAboveAverage();
+    public void deleteById(int id);
+    List<EmployeeDTO> getAllEmployee();
+    EmployeeDTO getInformationForEmployee(int id);
 
-    Employee createEmployee(Employee employee);
-    Employee updateEmployeeById(int id, Employee employee);
-    Optional<Employee> getInformationForEmployee(int id);
-    Employee deleteEmployee(int id);
-    Collection<Employee> getEmployeesBySalaryHigher(double salary);
-
-    Collection<Employee> getAllEmployees();
 
 }
