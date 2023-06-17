@@ -4,9 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.skypro.lessons.springboot.EmployeeApplication.model.Employee;
+import ru.skypro.lessons.springboot.EmployeeApplication.model.EmployeeEntity;
 
-import java.util.Collection;
 import java.util.List;
 
 @Builder
@@ -16,6 +15,6 @@ import java.util.List;
 public class EmployeeDTO {
     private String name;
     private double salary;
-    private String position;
-    List<Employee> employees;
+    private PositionDTO position;
+    List<EmployeeEntity> employees;
 }
