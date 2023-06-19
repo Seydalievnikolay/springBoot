@@ -58,10 +58,6 @@ public class EmployeeController {
     }
     @PostMapping(value = "/upload", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public void processJsonFile(@RequestParam("file") MultipartFile file) {
-         employeeFileService.processJsonFile(file);
-    }
-    @PostMapping
-    public void report() {
-
+        employeeFileService.processJsonFile(file);
     }
 }

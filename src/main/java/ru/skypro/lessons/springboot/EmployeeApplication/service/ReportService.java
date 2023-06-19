@@ -5,6 +5,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.skypro.lessons.springboot.EmployeeApplication.dto.ReportDTO;
+import ru.skypro.lessons.springboot.EmployeeApplication.dto.ReportToFileJsonDTO;
+import ru.skypro.lessons.springboot.EmployeeApplication.exception.EmployeeNotFoundException;
+import ru.skypro.lessons.springboot.EmployeeApplication.mappers.ReportMapper;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.DepartmentEntity;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.ReportEntity;
 import ru.skypro.lessons.springboot.EmployeeApplication.repository.DepartmentRepository;
@@ -20,26 +23,29 @@ public class ReportService {
     private final DepartmentService departmentService;
     private final ReportSaverService reportSaverServiceToJson;
     private final ReportSaverService reportSaverServiceToDB;
+    private final ReportMapper reportMapper;
 
     public ReportService(ReportRepository reportRepository, DepartmentService departmentService,
                          @Qualifier("reportSaverServiceToJsonImpl") ReportSaverService reportSaverServiceToJson,
-                         @Qualifier("reportSaverServiceToDBImpl") ReportSaverService reportSaverServiceToDB) {
+                         @Qualifier("reportSaverServiceToDBImpl") ReportSaverService reportSaverServiceToDB,
+                         ReportMapper reportMapper) {
         this.reportRepository = reportRepository;
         this.departmentService = departmentService;
         this.reportSaverServiceToJson = reportSaverServiceToJson;
         this.reportSaverServiceToDB = reportSaverServiceToDB;
+        this.reportMapper = reportMapper;
     }
 
     public int saveReportToJsonAndDB() {
-        ReportEntity report = createReport();
+        ReportDTO report = createReport();
         reportSaverServiceToJson.saveReport(report);
-        ReportEntity saveReport = reportSaverServiceToDB.saveReport(report);
+        ReportDTO saveReport = reportSaverServiceToDB.saveReport(report);
         return saveReport.getId();
     }
 
-    public ReportEntity createReport() {
+    public ReportDTO createReport() {
         List<DepartmentEntity> departmentEntityList = departmentService.getAllDepartmentEntity();
-        ReportEntity reportEntity = new ReportEntity();
+        ReportDTO reportDTO = new ReportDTO();
         StringBuilder stringBuilder = new StringBuilder();
         departmentEntityList.forEach(departmentEntity -> {
             String nameOfDepartment = departmentEntity.getName();
@@ -53,8 +59,16 @@ public class ReportService {
             stringBuilder.append(String.format("Average salary: %s\n",avgSalary));
             stringBuilder.append(String.format("Maximum salary: %s\n",maxSalary));
         });
-    reportEntity.setReportInfo(stringBuilder.toString());
-    return  reportEntity;
+    reportDTO.setReport(stringBuilder.toString());
+    return  reportDTO;
+    }
+
+    public ReportDTO getReportById(int id) {
+        ReportEntity report = reportRepository.findById(id)
+                .orElseThrow(() -> new EmployeeNotFoundException("Отчет не найден"));
+        ReportDTO reportDTO = new ReportDTO();
+        reportDTO.setPath(report.getFilePath());
+        return reportDTO;
     }
 
 }

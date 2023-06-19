@@ -1,6 +1,8 @@
 package ru.skypro.lessons.springboot.EmployeeApplication.service;
 
 import org.springframework.stereotype.Service;
+import ru.skypro.lessons.springboot.EmployeeApplication.dto.ReportDTO;
+import ru.skypro.lessons.springboot.EmployeeApplication.mappers.ReportMapper;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.ReportEntity;
 import ru.skypro.lessons.springboot.EmployeeApplication.repository.ReportRepository;
 
@@ -13,7 +15,13 @@ public class ReportSaverServiceToDBImpl implements ReportSaverService {
     }
 
     @Override
-    public ReportEntity saveReport(ReportEntity reportEntity) {
-        return reportRepository.save(reportEntity);
+    public ReportDTO saveReport(ReportDTO reportDTO) {
+        ReportEntity reportEntity = new ReportEntity();
+        reportEntity.setFilePath(reportDTO.getPath());
+        ReportEntity report = reportRepository.save(reportEntity);
+        return ReportDTO.builder()
+                .path(reportDTO.getReport())
+                .path(report.getFilePath())
+                .build();
     }
 }
