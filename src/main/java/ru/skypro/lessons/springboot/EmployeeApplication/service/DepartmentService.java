@@ -25,7 +25,7 @@ public class DepartmentService {
 
     public Double getMinimumSalaryEmployeeInDepartment(int departmentId) {
         DepartmentEntity departmentEntity = departmentRepository.findById(departmentId)
-                .orElseThrow(() -> new EmployeeNotFoundException(""));
+                .orElseThrow(() -> new EmployeeNotFoundException("Введены неверные данные"));
         return departmentEntity.getEmployees().stream()
                 .mapToDouble(EmployeeEntity::getSalary)
                 .min()
@@ -34,7 +34,7 @@ public class DepartmentService {
 
     public Double getMaximumSalaryEmployeeInDepartment(int departmentId) {
         DepartmentEntity departmentEntity = departmentRepository.findById(departmentId)
-                .orElseThrow(() -> new EmployeeNotFoundException(""));
+                .orElseThrow(() -> new EmployeeNotFoundException("Введены неверные данные"));
         return departmentEntity.getEmployees().stream()
                 .mapToDouble(EmployeeEntity::getSalary)
                 .max()
@@ -43,7 +43,7 @@ public class DepartmentService {
 
     public Double getEmployeesSalaryAboveAverageInDepartment(int departmentId) {
         DepartmentEntity departmentEntity = departmentRepository.findById(departmentId)
-                .orElseThrow(() -> new EmployeeNotFoundException(""));
+                .orElseThrow(() -> new EmployeeNotFoundException("Введены неверные данные"));
         return departmentEntity.getEmployees().stream()
                 .mapToDouble(EmployeeEntity::getSalary)
                 .average()
@@ -51,7 +51,7 @@ public class DepartmentService {
     }
     public int getAmountEmployeeInDepartment(int departmentId) {
         DepartmentEntity departmentEntity = departmentRepository.findById(departmentId)
-                .orElseThrow(() -> new EmployeeNotFoundException(""));
+                .orElseThrow(() -> new EmployeeNotFoundException("Введены неверные данные"));
         return departmentEntity.getEmployees().size();
     }
 

@@ -35,7 +35,7 @@ public class EmployeeService {
     public EmployeeDTO getInformationForEmployee(int id) {
         return employeeRepository.findById(id)
                 .map(employee -> employeeMapper.toDto(employee))
-                .orElseThrow(() -> new EmployeeNotFoundException("Not found ID"));
+                .orElseThrow(() -> new EmployeeNotFoundException("Not found id"));
     }
 
     public EmployeeDTO updateEmployeeById(int id, EmployeeEntity employee) {

@@ -8,5 +8,5 @@ import ru.skypro.lessons.springboot.EmployeeApplication.model.ReportEntity;
 import java.util.List;
 @Repository
 public interface ReportRepository extends CrudRepository<ReportEntity, Integer> {
-    List<ReportDTO> createReport();
+
 }
