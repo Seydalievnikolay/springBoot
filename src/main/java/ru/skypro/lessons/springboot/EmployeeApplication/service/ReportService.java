@@ -1,21 +1,14 @@
 package ru.skypro.lessons.springboot.EmployeeApplication.service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.skypro.lessons.springboot.EmployeeApplication.dto.ReportDTO;
-import ru.skypro.lessons.springboot.EmployeeApplication.dto.ReportToFileJsonDTO;
-import ru.skypro.lessons.springboot.EmployeeApplication.exception.EmployeeNotFoundException;
 import ru.skypro.lessons.springboot.EmployeeApplication.mappers.ReportMapper;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.DepartmentEntity;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.ReportEntity;
-import ru.skypro.lessons.springboot.EmployeeApplication.repository.DepartmentRepository;
 import ru.skypro.lessons.springboot.EmployeeApplication.repository.ReportRepository;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Service
 public class ReportService {
@@ -65,7 +58,7 @@ public class ReportService {
 
     public ReportDTO getReportById(int id) {
         ReportEntity report = reportRepository.findById(id)
-                .orElseThrow(() -> new EmployeeNotFoundException("Отчет не найден"));
+                .orElseThrow(() -> new RuntimeException("Отчет не найден"));
         ReportDTO reportDTO = new ReportDTO();
         reportDTO.setPath(report.getFilePath());
         return reportDTO;

@@ -10,7 +10,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import ru.skypro.lessons.springboot.EmployeeApplication.exception.EmployeeNotFoundException;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -23,7 +22,7 @@ import java.util.stream.Collectors;
 public class GlobalExceptionHandler {
     private final ObjectMapper objectMapper;
 
-    @ExceptionHandler(value = EmployeeNotFoundException.class)
+    @ExceptionHandler(value = RuntimeException.class)
     public void handleException(Exception exception, HttpServletRequest httpServletRequest,
                                 HttpServletResponse httpServletResponse) throws IOException {
         httpServletResponse.setStatus(HttpStatus.BAD_REQUEST.value());

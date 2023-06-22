@@ -1,13 +1,10 @@
 package ru.skypro.lessons.springboot.EmployeeApplication.service;
 
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ru.skypro.lessons.springboot.EmployeeApplication.dto.EmployeeDTO;
-import ru.skypro.lessons.springboot.EmployeeApplication.exception.EmployeeNotFoundException;
 import ru.skypro.lessons.springboot.EmployeeApplication.mappers.EmployeeMapper;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.EmployeeEntity;
 import ru.skypro.lessons.springboot.EmployeeApplication.model.PositionEntity;
@@ -35,7 +32,7 @@ public class EmployeeService {
     public EmployeeDTO getInformationForEmployee(int id) {
         return employeeRepository.findById(id)
                 .map(employee -> employeeMapper.toDto(employee))
-                .orElseThrow(() -> new EmployeeNotFoundException("Not found id"));
+                .orElseThrow(() -> new RuntimeException("Not found id"));
     }
 
     public EmployeeDTO updateEmployeeById(int id, EmployeeEntity employee) {
@@ -56,7 +53,7 @@ public class EmployeeService {
 
     public void deleteById(int id) {
         EmployeeEntity employee = employeeRepository.findById(id)
-                .orElseThrow(() -> new EmployeeNotFoundException(" Not found employee by id"));
+                .orElseThrow(() -> new RuntimeException(" Not found employee by id"));
         employeeRepository.delete(employee);
     }
 
