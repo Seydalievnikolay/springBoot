@@ -11,12 +11,12 @@ import java.util.List;
 @Table(name = "auth_user")
 public class AuthUser {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(nullable = false, unique = true)
-    private String userName;
+    @Column(name = "user_name", nullable = false, unique = true)
+    private String username;
     private String password;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "authority_id")
     private Authority authority;
 }

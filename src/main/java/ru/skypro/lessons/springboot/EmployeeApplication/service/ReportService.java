@@ -65,7 +65,7 @@ public class ReportService {
     }*/
     public ReportEntity getReportById(int id) {
         ReportEntity report = reportRepository.readReportById(id);
-        return  report;
+        return report;
     }
 
 }
