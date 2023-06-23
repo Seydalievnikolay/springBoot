@@ -8,14 +8,15 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "auth_user")
+@Table(name = "users")
 public class AuthUser {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-    @Column(name = "user_name", nullable = false, unique = true)
+    @Column(nullable = false, unique = true)
     private String username;
     private String password;
+    private boolean enabled;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "authority_id")
     private Authority authority;
