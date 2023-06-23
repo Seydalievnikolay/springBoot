@@ -56,12 +56,16 @@ public class ReportService {
     return  reportDTO;
     }
 
-    public ReportDTO getReportById(int id) {
+    /*public ReportDTO getReportById(int id) {
         ReportEntity report = reportRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Отчет не найден"));
         ReportDTO reportDTO = new ReportDTO();
         reportDTO.setPath(report.getFilePath());
         return reportDTO;
+    }*/
+    public ReportEntity getReportById(int id) {
+        ReportEntity report = reportRepository.readReportById(id);
+        return  report;
     }
 
 }
