@@ -64,11 +64,14 @@ public class SecurityConfig {
     private void customizeRequest(
             AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry registry) {
         try {
-            registry.requestMatchers(HttpMethod.GET,"/employee/**").hasAnyRole("USER","ADMIN")
+            registry.requestMatchers(HttpMethod.GET,"/employee/**").hasAnyRole("USER", "ADMIN")
                     .requestMatchers(HttpMethod.POST,"/employee/**").hasAnyRole("ADMIN")
                     .requestMatchers(HttpMethod.PUT,"/employee/**").hasAnyRole("ADMIN")
-                    .requestMatchers(HttpMethod.DELETE,"/employee/**").hasAnyRole("ADMIN");
-
+                    .requestMatchers(HttpMethod.DELETE,"/employee/**").hasAnyRole("ADMIN")
+                    .requestMatchers(HttpMethod.GET,"/report/**").hasAnyRole("USER", "ADMIN")
+                    .requestMatchers(HttpMethod.POST,"/report/**").hasAnyRole("ADMIN")
+                    .requestMatchers(HttpMethod.PUT,"/report/**").hasAnyRole("ADMIN")
+                    .requestMatchers(HttpMethod.DELETE,"/report/**").hasAnyRole("ADMIN");
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
