@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.authentication.configurati
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfiguration;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.annotation.web.configurers.AuthorizeHttpRequestsConfigurer;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,7 +32,43 @@ import javax.sql.DataSource;
 @RequiredArgsConstructor
 public class SecurityConfig {
 
+
     @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
+        return http
+                .csrf(AbstractHttpConfigurer::disable)
+                .formLogin(Customizer.withDefaults())
+                .logout(Customizer.withDefaults())
+                .sessionManagement(Customizer.withDefaults())
+                .httpBasic(Customizer.withDefaults())
+                .authorizeHttpRequests(authorizationManagerRequestMatcherRegistry ->
+                        authorizationManagerRequestMatcherRegistry
+                                .requestMatchers(HttpMethod.GET,"/employee/**","/report/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers(HttpMethod.POST,"/employee/**","/report/**").hasAnyRole("USER", "ADMIN")
+                                .requestMatchers(HttpMethod.PUT,"/employee/**").hasAnyRole("ADMIN")
+                                .requestMatchers(HttpMethod.DELETE,"/employee/**").hasAnyRole("ADMIN")
+                                .requestMatchers("/**").permitAll()
+                )
+                .build();
+    }
+    /*private void customizeRequest(
+            AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry registry) {
+        try {
+            registry.requestMatchers(HttpMethod.GET,"/employee/**","/report/**").hasAnyRole("USER", "ADMIN")
+                    .requestMatchers(HttpMethod.POST,"/employee/**","/report/**").hasAnyRole("ADMIN")
+                    .requestMatchers(HttpMethod.PUT,"/employee/**").hasAnyRole("ADMIN")
+                    .requestMatchers(HttpMethod.DELETE,"/employee/**").hasAnyRole("ADMIN")
+                    .requestMatchers("/**").permitAll();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }*/
+    /*@Bean
     public UserDetailsManager userDetailsManager(DataSource dataSource,
                                                  AuthenticationManager authenticationManager) {
 
@@ -46,34 +83,5 @@ public class SecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration)
             throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
-    }
-
-    @Bean
-    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.csrf(csrf -> csrf.ignoringRequestMatchers("/*"))
-                .authorizeHttpRequests(this::customizeRequest)
-                .formLogin(Customizer.withDefaults())
-                .logout(Customizer.withDefaults());
-        return http.build();
-    }
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    private void customizeRequest(
-            AuthorizeHttpRequestsConfigurer<HttpSecurity>.AuthorizationManagerRequestMatcherRegistry registry) {
-        try {
-            registry.requestMatchers(HttpMethod.GET,"/employee/**").hasAnyRole("USER", "ADMIN")
-                    .requestMatchers(HttpMethod.POST,"/employee/**").hasAnyRole("ADMIN")
-                    .requestMatchers(HttpMethod.PUT,"/employee/**").hasAnyRole("ADMIN")
-                    .requestMatchers(HttpMethod.DELETE,"/employee/**").hasAnyRole("ADMIN")
-                    .requestMatchers(HttpMethod.GET,"/report/**").hasAnyRole("USER", "ADMIN")
-                    .requestMatchers(HttpMethod.POST,"/report/**").hasAnyRole("ADMIN")
-                    .requestMatchers(HttpMethod.PUT,"/report/**").hasAnyRole("ADMIN")
-                    .requestMatchers(HttpMethod.DELETE,"/report/**").hasAnyRole("ADMIN");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
-    }
+    }*/
 }
