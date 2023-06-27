@@ -42,7 +42,7 @@ public class AppUserDetails implements UserDetails {
     @Override
     public String getUsername() {
         return Optional.ofNullable(userDetails)
-                .map(UserDTO::getLogin)
+                .map(UserDTO::getUsername)
                 .orElse(null);
     }
 

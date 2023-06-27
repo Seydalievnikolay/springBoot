@@ -11,7 +11,7 @@ import ru.skypro.lessons.springboot.EmployeeApplication.model.Role;
 @NoArgsConstructor
 public class UserDTO {
     private long id;
-    private String login;
+    private String username;
     private String password;
     private Role role;
     private boolean enabled;

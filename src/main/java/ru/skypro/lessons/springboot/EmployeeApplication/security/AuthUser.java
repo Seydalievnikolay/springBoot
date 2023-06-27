@@ -17,7 +17,7 @@ public class AuthUser {
     private long id;
 
     @Column(nullable = false, unique = true)
-    private String login;
+    private String username;
 
     @Column(nullable = false)
     private String password;

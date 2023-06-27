@@ -24,6 +24,7 @@ import org.springframework.security.provisioning.JdbcUserDetailsManager;
 import org.springframework.security.provisioning.UserDetailsManager;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.web.bind.annotation.RequestMapping;
+import ru.skypro.lessons.springboot.EmployeeApplication.model.Role;
 
 import javax.sql.DataSource;
 
