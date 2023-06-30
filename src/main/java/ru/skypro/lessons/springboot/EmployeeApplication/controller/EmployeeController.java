@@ -12,6 +12,7 @@ import ru.skypro.lessons.springboot.EmployeeApplication.service.EmployeeService;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequiredArgsConstructor
@@ -48,8 +49,11 @@ public class EmployeeController {
         return employeeService.getAllEmployee();
     }
     @GetMapping("/position")
-    public List<EmployeeDTO> getEmployeeByPosition(PositionEntity position) {
-        return employeeService.getEmployeeByPosition(position);
+    public List<EmployeeDTO> getEmployeeByPosition(@RequestParam("position") Optional position) {
+        if (position.isEmpty()) {
+            return employeeService.getAllEmployee();
+        } else
+            return employeeService.getEmployeeByPosition(position);
     }
     @GetMapping("/page")
     public List<EmployeeEntity> getEmployeesByPage(int number) {

@@ -18,4 +18,10 @@ public class EmployeeDTO {
     private PositionDTO position;
     private DepartmentDTO dto;
     List<EmployeeEntity> employees;
+    public static EmployeeDTO fromEmployee(EmployeeEntity employee) {
+        EmployeeDTO employeeDTO = new EmployeeDTO();
+        employeeDTO.setName(employee.getName());
+        employeeDTO.setSalary(employee.getSalary());
+        return employeeDTO;
+    }
 }
