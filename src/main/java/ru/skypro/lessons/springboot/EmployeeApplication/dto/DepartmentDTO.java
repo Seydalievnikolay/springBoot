@@ -4,18 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import ru.skypro.lessons.springboot.EmployeeApplication.model.EmployeeEntity;
 
 import java.util.List;
 
 @Builder
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeDTO {
+@NoArgsConstructor
+public class DepartmentDTO {
     private String name;
-    private double salary;
-    private PositionDTO position;
-    private DepartmentDTO dto;
-    List<EmployeeEntity> employees;
+    private EmployeeDTO employeeDTO;
 }

@@ -2,21 +2,21 @@ package ru.skypro.lessons.springboot.EmployeeApplication.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.Accessors;
 
-import java.util.List;
-
-@Entity
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode
-public class Position {
+@Entity
+@Accessors(chain = true)
+@Table(name = "report")
+public class ReportEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private String name;
-    @OneToMany(mappedBy = "position")
-    private List<Employee> employee;
+    @Column(name = "file_path")
+    private String filePath;
 }
