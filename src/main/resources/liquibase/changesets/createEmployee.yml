@@ -1,10 +1,10 @@
 databaseChangeLog:
   - changeSet:
       id: one
-      author: Nikolay
+      author: Seydaliev
       changes:
         - createTable:
-            tableName: position
+            tableName: employee
             columns:
               - column:
                   name: id
@@ -14,13 +14,20 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: position
+                  name: name
                   type: varchar(255)
+              - column:
+                  name: salary
+                  type: double
                   constraints:
                     nullable: false
               - column:
-                  name: position
+                  name: department_id
                   type: int
                   constraints:
-                    foreignKeyName: report
-                    nullable: false
+                    foreignKeyName: department
+              - column:
+                  name: position_id
+                  type: int
+                  constraints:
+                    foreignKeyName: position

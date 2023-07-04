@@ -1,3 +1,11 @@
 databaseChangeLog:
   - include:
-      file: liquibase/changesets/01012023_create_room.yml
+       file: liquibase/changesets/createEmployee.yml
+  - include:
+       file: liquibase/changesets/createPosition.yml
+  - include:
+      file: liquibase/changesets/createDepartment.yml
+  - include:
+      file: liquibase/changesets/createReport.yml
+  - include:
+      file: liquibase/changesets/createAuthUser.yml
