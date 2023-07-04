@@ -30,6 +30,6 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: role
-                  type: int
+                  type: varchar(255)
                   constraints:
                     foreignKeyName: role

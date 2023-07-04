@@ -780,3 +780,142 @@ Caused by: org.postgresql.util.PSQLException: ОШИБКА: тип "long" не �
 13:34:08.566 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@47bcaf67, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42a5bdaf, org.springframework.security.web.context.SecurityContextHolderFilter@4baf0b7f, org.springframework.security.web.header.HeaderWriterFilter@49a6503f, org.springframework.security.web.authentication.logout.LogoutFilter@63cfd703, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b93d874, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7eee42fc, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@524032f9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1504db11, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f58011d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f5b08d4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f33123, org.springframework.security.web.access.ExceptionTranslationFilter@40c858fc, org.springframework.security.web.access.intercept.AuthorizationFilter@6b6dce39]
 13:34:08.981 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
 13:34:08.994 [main] INFO  r.s.l.s.E.EmployeeApplication - Started EmployeeApplication in 12.071 seconds (process running for 13.747)
+13:54:18.974 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:54:18.982 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:54:19.061 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 76 ms
+13:57:36.019 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:57:36.048 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:57:36.079 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:00:07.738 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 17036 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+19:00:07.745 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+19:00:09.525 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:00:09.622 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+19:00:10.462 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:00:10.486 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:00:10.488 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+19:00:10.705 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:00:10.707 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2880 ms
+19:00:10.881 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:00:11.132 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76216830
+19:00:11.135 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:00:11.426 [main] INFO  liquibase.database - Set default schema name to public
+19:00:11.939 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+19:00:11.953 [main] INFO  liquibase.executor - Changelog query completed.
+19:00:11.991 [main] INFO  liquibase.changelog - Change failed validation!
+19:00:12.000 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Validation Failed:
+     1 changesets check sum
+          liquibase/changesets/createAuthUser.yml::one::Seydaliev was: 8:35c68722db04a722c60a668cacb05920 but is now: 8:ae4c508a0ecff02bb1f90086ffc794b1
+
+19:00:12.001 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:00:12.050 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:00:12.056 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+19:00:12.070 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+19:00:12.098 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Validation Failed:
+     1 changesets check sum
+          liquibase/changesets/createAuthUser.yml::one::Seydaliev was: 8:35c68722db04a722c60a668cacb05920 but is now: 8:ae4c508a0ecff02bb1f90086ffc794b1
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          liquibase/changesets/createAuthUser.yml::one::Seydaliev was: 8:35c68722db04a722c60a668cacb05920 but is now: 8:ae4c508a0ecff02bb1f90086ffc794b1
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:357)
+	at liquibase.Liquibase$16.run(Liquibase.java:2296)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.listUnrunChangeSets(Liquibase.java:2286)
+	at liquibase.Liquibase.isUpToDateFastCheck(Liquibase.java:506)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:237)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+19:01:01.245 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 13508 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+19:01:01.252 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+19:01:02.616 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:01:02.702 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 4 JPA repository interfaces.
+19:01:03.569 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:01:03.583 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:01:03.584 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+19:01:03.709 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:01:03.710 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2322 ms
+19:01:03.886 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:01:04.218 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66f16742
+19:01:04.220 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:01:04.461 [main] INFO  liquibase.database - Set default schema name to public
+19:01:04.954 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.961 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.967 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.972 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.978 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.979 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+19:01:05.010 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+19:01:05.020 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.023 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+19:01:05.027 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.029 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.117 [main] INFO  liquibase.changelog - Table employee created
+19:01:05.119 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createEmployee.yml::one::Seydaliev ran successfully in 16ms
+19:01:05.123 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.127 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.139 [main] INFO  liquibase.changelog - Table position created
+19:01:05.141 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createPosition.yml::one::Seydaliev ran successfully in 12ms
+19:01:05.144 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.159 [main] INFO  liquibase.changelog - Table department created
+19:01:05.162 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createDepartment.yml::one::Nikolay ran successfully in 14ms
+19:01:05.166 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.183 [main] INFO  liquibase.changelog - Table report created
+19:01:05.184 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createReport.yml::one::Seydaliev ran successfully in 16ms
+19:01:05.188 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.216 [main] INFO  liquibase.changelog - Table auth_user created
+19:01:05.218 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createAuthUser.yml::one::Seydaliev ran successfully in 24ms
+19:01:05.223 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.226 [main] INFO  liquibase - Update command completed successfully.
+19:01:05.231 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.233 [main] INFO  liquibase.lockservice - Successfully released change log lock
+19:01:05.438 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:01:05.560 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+19:01:05.562 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+19:01:05.798 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+19:01:06.026 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19:01:06.112 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@e5864c2
+19:01:06.521 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+19:01:07.478 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:01:07.531 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:01:07.836 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+19:01:08.614 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:01:09.592 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e0be005, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fd226da, org.springframework.security.web.context.SecurityContextHolderFilter@21f134a2, org.springframework.security.web.header.HeaderWriterFilter@222ebd21, org.springframework.security.web.authentication.logout.LogoutFilter@10ecdd85, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@21b05a8a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@679cdfc3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@36cd58e7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7d1f60cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6809a461, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50ba10de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7be3baf2, org.springframework.security.web.access.ExceptionTranslationFilter@572c50b6, org.springframework.security.web.access.intercept.AuthorizationFilter@21f41593]
+19:01:09.981 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:01:09.994 [main] INFO  r.s.l.s.E.EmployeeApplication - Started EmployeeApplication in 9.329 seconds (process running for 10.62)
