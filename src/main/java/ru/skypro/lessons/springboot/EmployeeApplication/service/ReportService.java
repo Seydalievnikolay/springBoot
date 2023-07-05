@@ -1,5 +1,7 @@
 package ru.skypro.lessons.springboot.EmployeeApplication.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.skypro.lessons.springboot.EmployeeApplication.dto.ReportDTO;
@@ -17,6 +19,7 @@ public class ReportService {
     private final ReportSaverService reportSaverServiceToJson;
     private final ReportSaverService reportSaverServiceToDB;
     private final ReportMapper reportMapper;
+    Logger logger = LoggerFactory.getLogger(ReportService.class);
 
     public ReportService(ReportRepository reportRepository, DepartmentService departmentService,
                          @Qualifier("reportSaverServiceToJsonImpl") ReportSaverService reportSaverServiceToJson,
@@ -30,14 +33,17 @@ public class ReportService {
     }
 
     public int saveReportToJsonAndDB() {
+        logger.info("The method of saving the report in json format in the database was called");
         ReportDTO report = createReport();
         reportSaverServiceToJson.saveReport(report);
         ReportDTO saveReport = reportSaverServiceToDB.saveReport(report);
+        logger.debug("The file was saved successfully");
         return saveReport.getId();
     }
 
     public ReportDTO createReport() {
-        List<DepartmentEntity> departmentEntityList = departmentService.getAllDepartmentEntity();
+        logger.info("The report creation method was called");
+        List<DepartmentEntity> departmentEntityList = departmentService.    getAllDepartmentEntity();
         ReportDTO reportDTO = new ReportDTO();
         StringBuilder stringBuilder = new StringBuilder();
         departmentEntityList.forEach(departmentEntity -> {
@@ -53,18 +59,14 @@ public class ReportService {
             stringBuilder.append(String.format("Maximum salary: %s\n",maxSalary));
         });
     reportDTO.setReport(stringBuilder.toString());
+    logger.debug("The report was created successfully");
     return  reportDTO;
     }
 
-    /*public ReportDTO getReportById(int id) {
-        ReportEntity report = reportRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Отчет не найден"));
-        ReportDTO reportDTO = new ReportDTO();
-        reportDTO.setPath(report.getFilePath());
-        return reportDTO;
-    }*/
     public ReportEntity getReportById(int id) {
+        logger.info("The method of searching for the report by id was called" + id);
         ReportEntity report = reportRepository.readReportById(id);
+        logger.debug("Report found successfully" + id);
         return report;
     }
 

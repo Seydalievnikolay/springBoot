@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: one
+      author: Seydaliev
+      changes:
+        - createTable:
+            tableName: employee
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: salary
+                  type: double
+                  constraints:
+                    nullable: false
+              - column:
+                  name: department_id
+                  type: int
+                  constraints:
+                    foreignKeyName: department
+              - column:
+                  name: position_id
+                  type: int
+                  constraints:
+                    foreignKeyName: position

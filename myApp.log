@@ -1,0 +1,921 @@
+23:21:50.143 [main] ERROR o.s.boot.SpringApplication - Application run failed
+ charset="866"org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Error parsing classpath:liquibase/changesets/changelog-master.yml
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:liquibase/changesets/changelog-master.yml
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:607)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:591)
+	at liquibase.Liquibase$16.run(Liquibase.java:2290)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.listUnrunChangeSets(Liquibase.java:2286)
+	at liquibase.Liquibase.isUpToDateFastCheck(Liquibase.java:506)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:237)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.SetupException: The file liquibase/changesets/01012023_create_room.yml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:461)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:388)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:86)
+	... 40 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file liquibase/changesets/01012023_create_room.yml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:832)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:452)
+	... 42 common frames omitted
+23:24:48.835 [main] ERROR o.s.boot.SpringApplication - Application run failed
+ charset="866"org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Error parsing classpath:liquibase/changesets/changelog-master.yml
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:liquibase/changesets/changelog-master.yml
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:607)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:591)
+	at liquibase.Liquibase$16.run(Liquibase.java:2290)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.listUnrunChangeSets(Liquibase.java:2286)
+	at liquibase.Liquibase.isUpToDateFastCheck(Liquibase.java:506)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:237)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.SetupException: The file liquibase/changesets/01012023_create_room.yml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:461)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:388)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:86)
+	... 40 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file liquibase/changesets/01012023_create_room.yml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:832)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:452)
+	... 42 common frames omitted
+12:16:52.282 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 18944 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+12:16:52.287 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+12:16:53.779 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:16:53.880 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 4 JPA repository interfaces.
+12:16:54.605 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:16:54.618 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:16:54.618 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+12:16:54.748 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:16:54.750 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2388 ms
+12:16:54.934 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:16:55.200 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7b96de8d
+12:16:55.202 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:16:55.440 [main] INFO  liquibase.database - Set default schema name to public
+12:16:55.581 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Error parsing classpath:liquibase/changelog-master.yml
+12:16:55.582 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:16:55.625 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:16:55.634 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:16:55.664 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+12:16:55.714 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Error parsing classpath:liquibase/changelog-master.yml
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.ChangeLogParseException: Error parsing classpath:liquibase/changelog-master.yml
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:92)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:607)
+	at liquibase.Liquibase.getDatabaseChangeLog(Liquibase.java:591)
+	at liquibase.Liquibase$16.run(Liquibase.java:2290)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.listUnrunChangeSets(Liquibase.java:2286)
+	at liquibase.Liquibase.isUpToDateFastCheck(Liquibase.java:506)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:237)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.SetupException: The file liquibase/changesets/01012023_create_room.yml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:461)
+	at liquibase.changelog.DatabaseChangeLog.load(DatabaseChangeLog.java:388)
+	at liquibase.parser.core.yaml.YamlChangeLogParser.parse(YamlChangeLogParser.java:86)
+	... 40 common frames omitted
+Caused by: liquibase.exception.ChangeLogParseException: The file liquibase/changesets/01012023_create_room.yml was not found in the configured search path:
+    - Spring classpath
+More locations can be added with the 'searchPath' parameter.
+	at liquibase.changelog.DatabaseChangeLog.include(DatabaseChangeLog.java:832)
+	at liquibase.changelog.DatabaseChangeLog.handleChildNode(DatabaseChangeLog.java:452)
+	... 42 common frames omitted
+12:37:13.611 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 11132 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+12:37:13.616 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+12:37:14.934 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:37:15.040 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 94 ms. Found 4 JPA repository interfaces.
+12:37:15.758 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:37:15.771 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:37:15.772 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+12:37:15.889 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:37:15.890 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2213 ms
+12:37:16.064 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:37:16.329 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@463afa6e
+12:37:16.331 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:37:16.563 [main] INFO  liquibase.database - Set default schema name to public
+12:37:17.143 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.153 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.160 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.164 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.172 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.173 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+12:37:17.201 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+12:37:17.210 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.212 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+12:37:17.218 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.219 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.284 [main] ERROR liquibase.changelog - ChangeSet liquibase/changesets/createEmployee.yml::one::Seydaliev encountered an exception.
+12:37:17.286 [main] INFO  liquibase - Update command encountered an exception.
+12:37:17.290 [main] INFO  liquibase.executor - Changelog query completed.
+12:37:17.290 [main] INFO  liquibase.lockservice - Successfully released change log lock
+12:37:17.293 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+12:37:17.294 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:37:17.362 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:37:17.367 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:37:17.401 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+12:37:17.433 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:136)
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:297)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:295)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:59)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:75)
+	... 36 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:445)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:160)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1270)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1252)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:702)
+	... 56 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: отношение "employee" уже существует
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:441)
+	... 61 common frames omitted
+12:38:37.982 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 12772 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+12:38:37.990 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+12:38:39.266 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+12:38:39.368 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 91 ms. Found 4 JPA repository interfaces.
+12:38:39.991 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+12:38:40.001 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+12:38:40.002 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+12:38:40.118 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+12:38:40.119 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2030 ms
+12:38:40.294 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+12:38:40.536 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@261f359f
+12:38:40.539 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+12:38:40.711 [main] INFO  liquibase.database - Set default schema name to public
+12:38:41.070 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+12:38:41.078 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.164 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.167 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.173 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.177 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+12:38:41.240 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.242 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+12:38:41.243 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.246 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.363 [main] ERROR liquibase.changelog - ChangeSet liquibase/changesets/createEmployee.yml::one::Seydaliev encountered an exception.
+12:38:41.367 [main] INFO  liquibase - Update command encountered an exception.
+12:38:41.372 [main] INFO  liquibase.executor - Changelog query completed.
+12:38:41.373 [main] INFO  liquibase.lockservice - Successfully released change log lock
+12:38:41.377 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+12:38:41.378 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+12:38:41.506 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+12:38:41.510 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+12:38:41.527 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+12:38:41.559 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:136)
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:297)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:295)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createEmployee.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:59)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:75)
+	... 36 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ОШИБКА: отношение "employee" уже существует [Failed SQL: (0) CREATE TABLE public.employee (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255), salary DOUBLE PRECISION NOT NULL, department_id INTEGER, position_id INTEGER, CONSTRAINT employee_pkey PRIMARY KEY (id))]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:445)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:160)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1270)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1252)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:702)
+	... 56 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: отношение "employee" уже существует
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:441)
+	... 61 common frames omitted
+13:20:14.388 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 18740 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+13:20:14.396 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+13:20:16.023 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:20:16.175 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 138 ms. Found 4 JPA repository interfaces.
+13:20:17.006 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:20:17.018 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:20:17.018 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+13:20:17.203 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:20:17.204 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2693 ms
+13:20:17.487 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:20:17.761 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2871ac91
+13:20:17.764 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:20:17.959 [main] INFO  liquibase.database - Set default schema name to public
+13:20:18.642 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+13:20:18.650 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.738 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.742 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.748 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.749 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+13:20:18.818 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.820 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+13:20:18.822 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.825 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.927 [main] INFO  liquibase.changelog - Table employee created
+13:20:18.930 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createEmployee.yml::one::Seydaliev ran successfully in 41ms
+13:20:18.936 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.946 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.955 [main] INFO  liquibase.changelog - Table position created
+13:20:18.957 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createPosition.yml::one::Seydaliev ran successfully in 8ms
+13:20:18.960 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.971 [main] ERROR liquibase.changelog - ChangeSet liquibase/changesets/createDepartment.yml::one::Nikolay encountered an exception.
+13:20:18.973 [main] INFO  liquibase - Update command encountered an exception.
+13:20:18.976 [main] INFO  liquibase.executor - Changelog query completed.
+13:20:18.976 [main] INFO  liquibase.lockservice - Successfully released change log lock
+13:20:18.979 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createDepartment.yml::one::Nikolay:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "department" уже существует [Failed SQL: (0) CREATE TABLE public.department (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255) NOT NULL, CONSTRAINT department_pkey PRIMARY KEY (id))]
+13:20:18.980 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:20:19.010 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:20:19.014 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+13:20:19.029 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:20:19.048 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createDepartment.yml::one::Nikolay:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "department" уже существует [Failed SQL: (0) CREATE TABLE public.department (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255) NOT NULL, CONSTRAINT department_pkey PRIMARY KEY (id))]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createDepartment.yml::one::Nikolay:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "department" уже существует [Failed SQL: (0) CREATE TABLE public.department (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255) NOT NULL, CONSTRAINT department_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:136)
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:297)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:295)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createDepartment.yml::one::Nikolay:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: отношение "department" уже существует [Failed SQL: (0) CREATE TABLE public.department (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255) NOT NULL, CONSTRAINT department_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:59)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:75)
+	... 36 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ОШИБКА: отношение "department" уже существует [Failed SQL: (0) CREATE TABLE public.department (id INTEGER GENERATED BY DEFAULT AS IDENTITY NOT NULL, name VARCHAR(255) NOT NULL, CONSTRAINT department_pkey PRIMARY KEY (id))]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:445)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:160)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1270)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1252)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:702)
+	... 56 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: отношение "department" уже существует
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:441)
+	... 61 common frames omitted
+13:22:11.176 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 4876 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+13:22:11.183 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+13:22:12.917 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:22:13.012 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 86 ms. Found 4 JPA repository interfaces.
+13:22:13.862 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:22:13.874 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:22:13.874 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+13:22:13.999 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:22:14.011 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2690 ms
+13:22:14.238 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:22:14.685 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@42c0a16e
+13:22:14.687 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:22:14.875 [main] INFO  liquibase.database - Set default schema name to public
+13:22:15.611 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.616 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.623 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.627 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.636 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.637 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+13:22:15.661 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+13:22:15.669 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.671 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+13:22:15.674 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.676 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.739 [main] INFO  liquibase.changelog - Table employee created
+13:22:15.741 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createEmployee.yml::one::Seydaliev ran successfully in 12ms
+13:22:15.744 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.747 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.757 [main] INFO  liquibase.changelog - Table position created
+13:22:15.758 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createPosition.yml::one::Seydaliev ran successfully in 9ms
+13:22:15.761 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.770 [main] INFO  liquibase.changelog - Table department created
+13:22:15.771 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createDepartment.yml::one::Nikolay ran successfully in 9ms
+13:22:15.773 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.782 [main] INFO  liquibase.changelog - Table report created
+13:22:15.784 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createReport.yml::one::Seydaliev ran successfully in 10ms
+13:22:15.791 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.799 [main] ERROR liquibase.changelog - ChangeSet liquibase/changesets/createAuthUser.yml::one::Seydaliev encountered an exception.
+13:22:15.802 [main] INFO  liquibase - Update command encountered an exception.
+13:22:15.810 [main] INFO  liquibase.executor - Changelog query completed.
+13:22:15.810 [main] INFO  liquibase.lockservice - Successfully released change log lock
+13:22:15.841 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createAuthUser.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: тип "long" не существует
+  Позиция: 35 [Failed SQL: (0) CREATE TABLE public.auth_user (id LONG GENERATED BY DEFAULT AS IDENTITY NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, enabled BOOLEAN NOT NULL, role INTEGER, CONSTRAINT auth_user_pkey PRIMARY KEY (id))]
+13:22:15.842 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:22:15.947 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+13:22:15.952 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+13:22:15.970 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+13:22:15.988 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createAuthUser.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: тип "long" не существует
+  Позиция: 35 [Failed SQL: (0) CREATE TABLE public.auth_user (id LONG GENERATED BY DEFAULT AS IDENTITY NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, enabled BOOLEAN NOT NULL, role INTEGER, CONSTRAINT auth_user_pkey PRIMARY KEY (id))]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.LiquibaseException: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createAuthUser.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: тип "long" не существует
+  Позиция: 35 [Failed SQL: (0) CREATE TABLE public.auth_user (id LONG GENERATED BY DEFAULT AS IDENTITY NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, enabled BOOLEAN NOT NULL, role INTEGER, CONSTRAINT auth_user_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:136)
+	at liquibase.Liquibase.lambda$null$0(Liquibase.java:297)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:295)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+Caused by: liquibase.exception.MigrationFailedException: Migration failed for changeset liquibase/changesets/createAuthUser.yml::one::Seydaliev:
+     Reason: liquibase.exception.DatabaseException: ОШИБКА: тип "long" не существует
+  Позиция: 35 [Failed SQL: (0) CREATE TABLE public.auth_user (id LONG GENERATED BY DEFAULT AS IDENTITY NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, enabled BOOLEAN NOT NULL, role INTEGER, CONSTRAINT auth_user_pkey PRIMARY KEY (id))]
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:744)
+	at liquibase.changelog.visitor.UpdateVisitor.visit(UpdateVisitor.java:59)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$null$0(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.changelog.ChangeLogIterator$2.lambda$run$1(ChangeLogIterator.java:124)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.changelog.ChangeLogIterator$2.run(ChangeLogIterator.java:105)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Scope.child(Scope.java:256)
+	at liquibase.Scope.child(Scope.java:260)
+	at liquibase.changelog.ChangeLogIterator.run(ChangeLogIterator.java:75)
+	... 36 common frames omitted
+Caused by: liquibase.exception.DatabaseException: ОШИБКА: тип "long" не существует
+  Позиция: 35 [Failed SQL: (0) CREATE TABLE public.auth_user (id LONG GENERATED BY DEFAULT AS IDENTITY NOT NULL, username VARCHAR(255) NOT NULL, password VARCHAR(255) NOT NULL, enabled BOOLEAN NOT NULL, role INTEGER, CONSTRAINT auth_user_pkey PRIMARY KEY (id))]
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:445)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:77)
+	at liquibase.executor.jvm.JdbcExecutor.execute(JdbcExecutor.java:160)
+	at liquibase.database.AbstractJdbcDatabase.execute(AbstractJdbcDatabase.java:1270)
+	at liquibase.database.AbstractJdbcDatabase.executeStatements(AbstractJdbcDatabase.java:1252)
+	at liquibase.changelog.ChangeSet.execute(ChangeSet.java:702)
+	... 56 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ОШИБКА: тип "long" не существует
+  Позиция: 35
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2713)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2401)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:368)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:498)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:415)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:335)
+	at org.postgresql.jdbc.PgStatement.executeCachedSql(PgStatement.java:321)
+	at org.postgresql.jdbc.PgStatement.executeWithFlags(PgStatement.java:297)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:292)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at liquibase.executor.jvm.JdbcExecutor$ExecuteStatementCallback.doInStatement(JdbcExecutor.java:441)
+	... 61 common frames omitted
+13:33:57.677 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 2848 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+13:33:57.683 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+13:33:59.466 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:33:59.612 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 132 ms. Found 4 JPA repository interfaces.
+13:34:00.581 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+13:34:00.595 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+13:34:00.595 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+13:34:00.728 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+13:34:00.731 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2954 ms
+13:34:00.945 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+13:34:01.398 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1118d539
+13:34:01.400 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+13:34:01.670 [main] INFO  liquibase.database - Set default schema name to public
+13:34:02.375 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.385 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.394 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.400 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.407 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.409 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+13:34:02.468 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+13:34:02.483 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.487 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+13:34:02.492 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.497 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.574 [main] INFO  liquibase.changelog - Table employee created
+13:34:02.576 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createEmployee.yml::one::Seydaliev ran successfully in 14ms
+13:34:02.580 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.583 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.595 [main] INFO  liquibase.changelog - Table position created
+13:34:02.597 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createPosition.yml::one::Seydaliev ran successfully in 11ms
+13:34:02.600 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.612 [main] INFO  liquibase.changelog - Table department created
+13:34:02.614 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createDepartment.yml::one::Nikolay ran successfully in 10ms
+13:34:02.616 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.629 [main] INFO  liquibase.changelog - Table report created
+13:34:02.631 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createReport.yml::one::Seydaliev ran successfully in 12ms
+13:34:02.634 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.652 [main] INFO  liquibase.changelog - Table auth_user created
+13:34:02.654 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createAuthUser.yml::one::Seydaliev ran successfully in 17ms
+13:34:02.659 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.662 [main] INFO  liquibase - Update command completed successfully.
+13:34:02.666 [main] INFO  liquibase.executor - Changelog query completed.
+13:34:02.667 [main] INFO  liquibase.lockservice - Successfully released change log lock
+13:34:02.805 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+13:34:02.928 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+13:34:02.931 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+13:34:03.280 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:34:03.546 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+13:34:03.616 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@7641ed02
+13:34:03.956 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+13:34:05.335 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+13:34:05.489 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:34:05.895 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+13:34:06.952 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:34:08.566 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@47bcaf67, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@42a5bdaf, org.springframework.security.web.context.SecurityContextHolderFilter@4baf0b7f, org.springframework.security.web.header.HeaderWriterFilter@49a6503f, org.springframework.security.web.authentication.logout.LogoutFilter@63cfd703, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3b93d874, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@7eee42fc, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@524032f9, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@1504db11, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@f58011d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f5b08d4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5f33123, org.springframework.security.web.access.ExceptionTranslationFilter@40c858fc, org.springframework.security.web.access.intercept.AuthorizationFilter@6b6dce39]
+13:34:08.981 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+13:34:08.994 [main] INFO  r.s.l.s.E.EmployeeApplication - Started EmployeeApplication in 12.071 seconds (process running for 13.747)
+13:54:18.974 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:54:18.982 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+13:54:19.061 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 76 ms
+13:57:36.019 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+13:57:36.048 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+13:57:36.079 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:00:07.738 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 17036 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+19:00:07.745 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+19:00:09.525 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:00:09.622 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84 ms. Found 4 JPA repository interfaces.
+19:00:10.462 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:00:10.486 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:00:10.488 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+19:00:10.705 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:00:10.707 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2880 ms
+19:00:10.881 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:00:11.132 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@76216830
+19:00:11.135 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:00:11.426 [main] INFO  liquibase.database - Set default schema name to public
+19:00:11.939 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+19:00:11.953 [main] INFO  liquibase.executor - Changelog query completed.
+19:00:11.991 [main] INFO  liquibase.changelog - Change failed validation!
+19:00:12.000 [main] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Validation Failed:
+     1 changesets check sum
+          liquibase/changesets/createAuthUser.yml::one::Seydaliev was: 8:35c68722db04a722c60a668cacb05920 but is now: 8:ae4c508a0ecff02bb1f90086ffc794b1
+
+19:00:12.001 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+19:00:12.050 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+19:00:12.056 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+19:00:12.070 [main] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+19:00:12.098 [main] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'liquibase' defined in class path resource [org/springframework/boot/autoconfigure/liquibase/LiquibaseAutoConfiguration$LiquibaseConfiguration.class]: Validation Failed:
+     1 changesets check sum
+          liquibase/changesets/createAuthUser.yml::one::Seydaliev was: 8:35c68722db04a722c60a668cacb05920 but is now: 8:ae4c508a0ecff02bb1f90086ffc794b1
+
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1770)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:520)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:313)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1156)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:931)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:608)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:733)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:435)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:311)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1305)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1294)
+	at ru.skypro.lessons.springboot.EmployeeApplication.EmployeeApplication.main(EmployeeApplication.java:10)
+Caused by: liquibase.exception.ValidationFailedException: Validation Failed:
+     1 changesets check sum
+          liquibase/changesets/createAuthUser.yml::one::Seydaliev was: 8:35c68722db04a722c60a668cacb05920 but is now: 8:ae4c508a0ecff02bb1f90086ffc794b1
+
+	at liquibase.changelog.DatabaseChangeLog.validate(DatabaseChangeLog.java:357)
+	at liquibase.Liquibase$16.run(Liquibase.java:2296)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.listUnrunChangeSets(Liquibase.java:2286)
+	at liquibase.Liquibase.isUpToDateFastCheck(Liquibase.java:506)
+	at liquibase.Liquibase.lambda$update$1(Liquibase.java:237)
+	at liquibase.Scope.lambda$child$0(Scope.java:187)
+	at liquibase.Scope.child(Scope.java:196)
+	at liquibase.Scope.child(Scope.java:186)
+	at liquibase.Scope.child(Scope.java:165)
+	at liquibase.Liquibase.runInScope(Liquibase.java:2639)
+	at liquibase.Liquibase.update(Liquibase.java:236)
+	at liquibase.Liquibase.update(Liquibase.java:221)
+	at liquibase.integration.spring.SpringLiquibase.performUpdate(SpringLiquibase.java:329)
+	at liquibase.integration.spring.SpringLiquibase.afterPropertiesSet(SpringLiquibase.java:284)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1816)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1766)
+	... 18 common frames omitted
+19:01:01.245 [main] INFO  r.s.l.s.E.EmployeeApplication - Starting EmployeeApplication using Java 17.0.6 with PID 13508 (C:\Users\nikol\IdeaProjects\EmployeeApplication\target\classes started by nikol in C:\Users\nikol\IdeaProjects\EmployeeApplication)
+19:01:01.252 [main] INFO  r.s.l.s.E.EmployeeApplication - No active profile set, falling back to 1 default profile: "default"
+19:01:02.616 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+19:01:02.702 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 78 ms. Found 4 JPA repository interfaces.
+19:01:03.569 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+19:01:03.583 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+19:01:03.584 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.8]
+19:01:03.709 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+19:01:03.710 [main] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2322 ms
+19:01:03.886 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+19:01:04.218 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@66f16742
+19:01:04.220 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+19:01:04.461 [main] INFO  liquibase.database - Set default schema name to public
+19:01:04.954 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.961 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.967 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.972 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.978 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:04.979 [main] INFO  liquibase.lockservice - Successfully acquired change log lock
+19:01:05.010 [main] INFO  liquibase.changelog - Creating database history table with name: public.databasechangelog
+19:01:05.020 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.023 [main] INFO  liquibase.changelog - Reading from public.databasechangelog
+19:01:05.027 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.029 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.117 [main] INFO  liquibase.changelog - Table employee created
+19:01:05.119 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createEmployee.yml::one::Seydaliev ran successfully in 16ms
+19:01:05.123 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.127 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.139 [main] INFO  liquibase.changelog - Table position created
+19:01:05.141 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createPosition.yml::one::Seydaliev ran successfully in 12ms
+19:01:05.144 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.159 [main] INFO  liquibase.changelog - Table department created
+19:01:05.162 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createDepartment.yml::one::Nikolay ran successfully in 14ms
+19:01:05.166 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.183 [main] INFO  liquibase.changelog - Table report created
+19:01:05.184 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createReport.yml::one::Seydaliev ran successfully in 16ms
+19:01:05.188 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.216 [main] INFO  liquibase.changelog - Table auth_user created
+19:01:05.218 [main] INFO  liquibase.changelog - ChangeSet liquibase/changesets/createAuthUser.yml::one::Seydaliev ran successfully in 24ms
+19:01:05.223 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.226 [main] INFO  liquibase - Update command completed successfully.
+19:01:05.231 [main] INFO  liquibase.executor - Changelog query completed.
+19:01:05.233 [main] INFO  liquibase.lockservice - Successfully released change log lock
+19:01:05.438 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+19:01:05.560 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.2.2.Final
+19:01:05.562 [main] INFO  org.hibernate.cfg.Environment - HHH000406: Using bytecode reflection optimizer
+19:01:05.798 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+19:01:06.026 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+19:01:06.112 [main] INFO  org.hibernate.orm.dialect - HHH035001: Using dialect: org.hibernate.dialect.PostgreSQLDialect, version: org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$DialectResolutionInfoImpl@e5864c2
+19:01:06.521 [main] INFO  o.h.b.i.BytecodeProviderInitiator - HHH000021: Bytecode provider name : bytebuddy
+19:01:07.478 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+19:01:07.531 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+19:01:07.836 [main] INFO  o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+19:01:08.614 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+19:01:09.592 [main] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@1e0be005, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1fd226da, org.springframework.security.web.context.SecurityContextHolderFilter@21f134a2, org.springframework.security.web.header.HeaderWriterFilter@222ebd21, org.springframework.security.web.authentication.logout.LogoutFilter@10ecdd85, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@21b05a8a, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@679cdfc3, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@36cd58e7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@7d1f60cf, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6809a461, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@50ba10de, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7be3baf2, org.springframework.security.web.access.ExceptionTranslationFilter@572c50b6, org.springframework.security.web.access.intercept.AuthorizationFilter@21f41593]
+19:01:09.981 [main] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+19:01:09.994 [main] INFO  r.s.l.s.E.EmployeeApplication - Started EmployeeApplication in 9.329 seconds (process running for 10.62)
